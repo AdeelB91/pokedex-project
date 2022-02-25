@@ -15,17 +15,28 @@ async function run() {
   });
   const pokeData = await Promise.all(pokePromises);
   p(pokeData);
-  p(pokeData[0].name);
+  p(pokeData[4].name);
   p(pokeData[4].weight);
-
+  const picture = pokeData[4].sprites.back_default;
+  p(pokeData[4].height);
   p(pokeData[4].id);
+  //##########################################
   document.querySelector('#app').innerHTML = /* html */ `
-  <header class=center >${header}</header>
-  <p>Hi It's me ${pokemonName}!</p>
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`;
+  <header class="center">${header}</header>
+    <div class="pokedex page center" id="pokedex">
+      <img src="${picture}" alt="pokemon Picture">
+      <div class="display_border center">
+        <div class="display">
+          <p>hallo pikachu</p>
+        </div>
+      </div>
+    </div>
+  
+  
+  `;
+  //##########################################
 }
+
 run();
 // const pokeUrl = fetchPokeUrl(pokeData);
 
