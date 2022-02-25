@@ -3,11 +3,21 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "test": "npm run htmlhint && npm run stylelint && npm run prettier:check && npm run eslint",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "htmlhint": "npx htmlhint \"**/*.html\"",
+    "stylelint": "npx stylelint \"**/*.css\"",
+    "prettier:check": "npx prettier --check .",
+    "prettier:write": "npx prettier --write .",
+    "eslint": "npx eslint \"**/*.js\""
   },
   "devDependencies": {
+    "eslint": "^8.9.0",
+    "htmlhint": "^1.1.2",
+    "prettier": "^2.5.1",
+    "stylelint": "^14.5.3",
     "vite": "^2.8.0"
   }
 }
