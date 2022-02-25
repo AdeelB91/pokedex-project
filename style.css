@@ -6,3 +6,21 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+
+header {
+  width: 100%;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: red;
+  color: yellow;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
