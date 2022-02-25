@@ -40,7 +40,7 @@ async function run() {
 run();
 // const pokeUrl = fetchPokeUrl(pokeData);
 
-export async function fetchPokeData() {
+async function fetchPokeData() {
   try {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
     const data = await response.json();
