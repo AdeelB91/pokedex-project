@@ -1,16 +1,23 @@
 @import url(./variables.css);
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 200px;
+  margin-top: 150px;
+  background-color: orange;
 }
 
 header {
-  width: 100%;
+  width: 100vw;
   padding: 1rem;
   position: fixed;
   top: 0;
@@ -21,42 +28,82 @@ header {
   font-weight: bolder;
 }
 
-.center {
+p {
+  color: var(--content-display-color);
+}
+
+.center_flex {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+.max_width {
+  max-width: 50%;
 }
 
 .pokedex {
-  background-color: var(--main-bg-color);
-  margin: 5rem;
-  width: 400px;
-  height: 500px;
-  border-radius: 10px;
-  box-shadow: 20px 20px 5px 3px var(--main-bg-color-shadow);
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  flex-direction: row;
 }
 
-.display_border {
+.pokedex_main {
+  background-color: var(--main-bg-color);
+  margin: 5rem 0.3rem 5rem 5rem;
+  padding: 3rem;
+  width: 400px;
+  min-width: calc(width/2);
+  height: 550px;
+  min-height: calc(height/2);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px var(--main-bg-color-shadow);
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  justify-items: center;
+}
+
+.display_border_main {
   background-color: var(--displayborder-bg-color);
   padding: 1rem;
-  width: 60%;
-  height: 35%;
+  width: 300px;
+  height: 250px;
   border-radius: 5px 5px 5px 40px;
   box-shadow: 0 0 5px 3px var(--displayborder-bg-color-shadow);
 }
 
-.display {
+.display_main {
   background-color: var(--display-bg-color);
   padding: 1rem;
-  width: 70%;
-  height: 60%;
+  width: 80%;
+  height: 75%;
   border-radius: 3px;
   box-shadow: 0 0 1px 1px var(--displayborder-bg-color-shadow);
 }
 
-p {
-  color: var(--content-display-color);
+.pokedex_info {
+  background-color: var(--main-bg-color);
+  margin: 5rem 5rem 5rem 0;
+  padding: 3rem;
+  width: 400px;
+  min-width: calc(width/2);
+  height: 450px;
+  min-height: calc(height/2);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px var(--main-bg-color-shadow);
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: center;
+  justify-items: center;
+  align-self: end;
+}
+
+.display_info {
+  background-color: var(--display-bg-color);
+  padding: 0.3rem;
+  width: 400px;
+  max-width: 300px;
+  height: 100px;
+  max-height: 100px;
+  border-radius: 3px;
+  box-shadow: 0 0 1px 1px var(--displayborder-bg-color-shadow);
 }
