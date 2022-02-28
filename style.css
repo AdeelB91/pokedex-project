@@ -41,14 +41,14 @@ p {
   max-width: 50%;
 }
 
-.wrapper {
+.pokedex {
   display: flex;
   flex-direction: row;
 }
 
 .pokedex_main {
   background-color: var(--main-bg-color);
-  margin: 5rem 0 5rem 5rem;
+  margin: 5rem 0.3rem 5rem 5rem;
   padding: 3rem;
   width: 400px;
   min-width: calc(width/2);

@@ -17,7 +17,10 @@ async function run() {
   pokeNum -= 1;
   const pokemon = pokeData[pokeNum];
   const pokemonFrontSprite = pokemon.sprites.other.dream_world.front_default;
+  const pokemonID = pokemon.id;
   const pokemonName = pokemon.name;
+  const pokemonHeight = pokemon.height;
+  const pokemonWeight = pokemon.weight;
   const pokemonType = pokemon.types[0].type.name;
   p(pokemon.name);
   p(pokemon.weight);
@@ -25,7 +28,7 @@ async function run() {
   //##########################################
   document.querySelector('#app').innerHTML = /* html */ `
   <header class="center_flex">${header}</header>
-  <div class="wrapper">
+  <div class="pokedex">
     <div class="pokedex_main page center_flex" id="pokedex_main">
 
       <div class="display_border_main center_flex">
@@ -41,6 +44,9 @@ async function run() {
     <div class="pokedex_info page center_flex" id="pokedex_info">
       <div class="display_info">
        <p>It's ${pokemonName}, a ${pokemonType} Pokemon!</p>
+       <p>Pokemon-ID: ${pokemonID}</p>
+       <p>Height: ${pokemonHeight}0 cm</p>
+       <p>Weight: ${pokemonWeight} kg</p>
       </div>
     </div>
   </div>
