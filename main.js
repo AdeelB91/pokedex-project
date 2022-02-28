@@ -1,8 +1,8 @@
 import './style.css';
 import { print as p } from './utils.js';
 
+let pokeNum = 1; // Chose the number of the pokemon
 // const pokeData = fetchPokeData();
-const pokemonName = 'Pikachu';
 const header = '<img alt="Pokedex Header" src="./Images/Pokedex-font.png">';
 
 async function run() {
@@ -14,23 +14,36 @@ async function run() {
     return fetchSinglePoke(url);
   });
   const pokeData = await Promise.all(pokePromises);
-  p(pokeData);
-  p(pokeData[4].name);
-  p(pokeData[4].weight);
-  const picture = pokeData[4].sprites.back_default;
-  p(pokeData[4].height);
-  p(pokeData[4].id);
+  pokeNum -= 1;
+  const pokemon = pokeData[pokeNum];
+  const pokemonFrontSprite = pokemon.sprites.other.dream_world.front_default;
+  const pokemonName = pokemon.name;
+  const pokemonType = pokemon.types[0].type.name;
+  p(pokemon.name);
+  p(pokemon.weight);
+  p(pokemon.height);
   //##########################################
   document.querySelector('#app').innerHTML = /* html */ `
-  <header class="center">${header}</header>
-    <div class="pokedex page center" id="pokedex">
-      <img src="${picture}" alt="pokemon Picture">
-      <div class="display_border center">
-        <div class="display">
-          <p>hallo pikachu</p>
+  <header class="center_flex">${header}</header>
+  <div class="wrapper">
+    <div class="pokedex_main page center_flex" id="pokedex_main">
+
+      <div class="display_border_main center_flex">
+        <div class="display_main center_flex">
+          <img
+          class="max_width"
+          src="${pokemonFrontSprite}"
+          alt="pokemon Picture"
+          />
         </div>
       </div>
     </div>
+    <div class="pokedex_info page center_flex" id="pokedex_info">
+      <div class="display_info">
+       <p>It's ${pokemonName}, a ${pokemonType} Pokemon!</p>
+      </div>
+    </div>
+  </div>
   
   
   `;
@@ -42,7 +55,9 @@ run();
 
 async function fetchPokeData() {
   try {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
+    const response = await fetch(
+      'https://pokeapi.co/api/v2/pokemon/?limit=151'
+    );
     const data = await response.json();
     const urlArray = getUrlData(data.results);
     return urlArray;
