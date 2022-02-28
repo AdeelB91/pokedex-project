@@ -22,34 +22,32 @@ async function run() {
   const pokemonHeight = pokemon.height;
   const pokemonWeight = pokemon.weight;
   const pokemonType = pokemon.types[0].type.name;
-  p(pokemon.name);
-  p(pokemon.weight);
-  p(pokemon.height);
   //##########################################
   document.querySelector('#app').innerHTML = /* html */ `
   <header class="center_flex">${header}</header>
   <div class="pokedex">
     <div class="pokedex_main page center_flex" id="pokedex_main">
-
       <div class="display_border_main center_flex">
         <div class="display_main center_flex">
           <img
-          class="max_width"
-          src="${pokemonFrontSprite}"
-          alt="pokemon Picture"
+            class="max_width"
+            src="${pokemonFrontSprite}"
+            alt="pokemon Picture"
           />
         </div>
       </div>
+      <button class="pokedex_button"></button>
     </div>
     <div class="pokedex_info page center_flex" id="pokedex_info">
       <div class="display_info">
-       <p>It's ${pokemonName}, a ${pokemonType} Pokemon!</p>
-       <p>Pokemon-ID: ${pokemonID}</p>
-       <p>Height: ${pokemonHeight}0 cm</p>
-       <p>Weight: ${pokemonWeight} kg</p>
+        <p>It's ${pokemonName}, a ${pokemonType} Pokemon!</p>
+        <p>Pokemon-ID: ${pokemonID}</p>
+        <p>Height: ${pokemonHeight * 10} cm</p>
+        <p>Weight: ${pokemonWeight} kg</p>
       </div>
     </div>
   </div>
+  
   
   
   `;

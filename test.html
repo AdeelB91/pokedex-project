@@ -1,5 +1,5 @@
 <header class="center_flex">${header}</header>
-<div class="wrapper">
+<div class="pokedex">
   <div class="pokedex_main page center_flex" id="pokedex_main">
     <div class="display_border_main center_flex">
       <div class="display_main center_flex">
@@ -10,10 +10,14 @@
         />
       </div>
     </div>
+    <button class="pokedex_button"></button>
   </div>
   <div class="pokedex_info page center_flex" id="pokedex_info">
     <div class="display_info">
-      <p>It's ${pokemonName}, a ${pokemon.type} Pokemon!</p>
+      <p>It's ${pokemonName}, a ${pokemonType} Pokemon!</p>
+      <p>Pokemon-ID: ${pokemonID}</p>
+      <p>Height: ${pokemonHeight}0 cm</p>
+      <p>Weight: ${pokemonWeight} kg</p>
     </div>
   </div>
 </div>

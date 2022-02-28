@@ -13,7 +13,6 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 150px;
-  background-color: orange;
 }
 
 header {
@@ -26,6 +25,10 @@ header {
   color: yellow;
   font-size: 25px;
   font-weight: bolder;
+}
+
+body {
+  background-color: orange;
 }
 
 p {
@@ -105,5 +108,14 @@ p {
   height: 100px;
   max-height: 100px;
   border-radius: 3px;
+  box-shadow: 0 0 1px 1px var(--displayborder-bg-color-shadow);
+}
+
+.pokedex_button {
+  background-color: rgb(4, 50, 42);
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: 1px solid rgb(4, 50, 42);
   box-shadow: 0 0 1px 1px var(--displayborder-bg-color-shadow);
 }
